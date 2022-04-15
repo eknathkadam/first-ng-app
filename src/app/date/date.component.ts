@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-//import { setInterval } from 'timers';
 
 @Component({
-  selector: 'app-date',
+  selector: 'date',
   templateUrl: './date.component.html',
   styleUrls: ['./date.component.css']
 })
 export class DateComponent implements OnInit {
 
-  dateMessage: string;
+  dateMessage: any;
 
   constructor() {
-    setInterval(()=>{
+
+   setInterval(() =>{
     let currentDate=new Date();
     let dateMessage: string;
     this.dateMessage=currentDate.toString() + ' ' + currentDate.toLocaleTimeString();
-   },1000);
+ },1000);
+
   }
 
   ngOnInit(): void {
