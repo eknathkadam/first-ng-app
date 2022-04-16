@@ -1,3 +1,11 @@
 <app-hello-world></app-hello-world>
+User Name: <input type="text" [(ngModel)]="userName"> <button (click)="searchUser()">Search</button>
+<div *ngIf="response">
+<p>Name:{{response.name?null:''+response.login}}</p>
+<p>No Of Followers: {{response.followers}}</p>
+<p>Date account created: {{response.created_at}}</p>
+<p>Number of public repos: {{response.public_repos}}</p>
+
+</div>
 <date></date>
 <address-card [user]="user"></address-card>

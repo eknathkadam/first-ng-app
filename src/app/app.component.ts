@@ -11,6 +11,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent {
   user: User;
+  userName: string;
+  response: any;
 constructor(private svc: TestService, private http: HttpClient){
   this.user = new User();
   this.user.userName="Eknath Kadam";
@@ -23,8 +25,12 @@ constructor(private svc: TestService, private http: HttpClient){
 } 
 ngOnInit(){
 
-  let obs = this.http.get("https://api.github.com/users/eknathkadam");
-  obs.subscribe((response)=>console.log(response));
-;
+  
+}
+searchUser(){
+  this.http.get("https://api.github.com/users/"+this.userName)
+  .subscribe((response)=>this.response=response);
+  console.log(this.response);
+
 }
 }
