@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { DateComponent } from './date/date.component';
 import { AddressCardComponent } from './address-card/address-card.component';
+import { TestService } from './test.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,13 @@ import { AddressCardComponent } from './address-card/address-card.component';
     AddressCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TestService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
